@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
-import Chat from './components/Chat';
+import EnhancedChat from './components/EnhancedChat';
 import WelcomeModal from './components/WelcomeModal';
 import FeaturePopup from './components/FeaturePopup';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
@@ -47,11 +47,11 @@ function AppContent() {
   };
 
   return (
-    <div className="flex h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="flex h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-all duration-300">
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden backdrop-blur-sm"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -65,7 +65,7 @@ function AppContent() {
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col min-w-0">
-        <Chat onOpenSidebar={() => setSidebarOpen(true)} />
+        <EnhancedChat onOpenSidebar={() => setSidebarOpen(true)} />
       </div>
 
       {/* Welcome Modal */}

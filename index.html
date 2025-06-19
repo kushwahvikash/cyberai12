@@ -4,13 +4,155 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CyberAI - Kali Linux & Cybersecurity Expert AI</title>
+    <title>CyberAI Ultimate - Advanced AI Assistant & Cybersecurity Expert</title>
+    <meta name="description" content="CyberAI Ultimate - The most advanced AI assistant with unrestricted access to cybersecurity knowledge, real-time web search, code generation, and comprehensive expertise across all domains." />
+    <meta name="keywords" content="AI assistant, cybersecurity, Kali Linux, penetration testing, code generation, web search, artificial intelligence, chatbot, hacking tools, security expert" />
+    <meta name="author" content="Udit Narayan" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cyberai.rf.gd/" />
+    <meta property="og:title" content="CyberAI Ultimate - Advanced AI Assistant" />
+    <meta property="og:description" content="The most advanced AI assistant with unrestricted access to cybersecurity knowledge and comprehensive expertise." />
+    <meta property="og:image" content="https://cyberai.rf.gd/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cyberai.rf.gd/" />
+    <meta property="twitter:title" content="CyberAI Ultimate - Advanced AI Assistant" />
+    <meta property="twitter:description" content="The most advanced AI assistant with unrestricted access to cybersecurity knowledge and comprehensive expertise." />
+    <meta property="twitter:image" content="https://cyberai.rf.gd/og-image.jpg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Theme -->
+    <script>
+      // Set dark theme by default
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'dark');
+        document.documentElement.classList.add('dark');
+      } else if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0ea5e9" />
+    
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CyberAI Ultimate",
+      "description": "Advanced AI assistant with cybersecurity expertise",
+      "url": "https://cyberai.rf.gd",
+      "applicationCategory": "AI Assistant",
+      "operatingSystem": "Web",
+      "author": {
+        "@type": "Person",
+        "name": "Udit Narayan"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Loading screen -->
+    <style>
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-content {
+        text-align: center;
+        color: white;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #00d4ff, #0099cc);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 32px;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+      
+      .loading-text {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      
+      .loading-subtitle {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+    </style>
+    
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loading-logo">AI</div>
+        <div class="loading-text">CyberAI Ultimate</div>
+        <div class="loading-subtitle">Loading advanced AI systems...</div>
+      </div>
+    </div>
+    
+    <script>
+      // Hide loading screen when app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
